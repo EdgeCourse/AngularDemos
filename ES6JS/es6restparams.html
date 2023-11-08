@@ -1,0 +1,39 @@
+<script>
+/*
+The arguments object is not a real array, while rest parameters are Array instances, 
+meaning methods like sort(), map(), forEach() or pop() can be applied on it directly.
+*/
+
+/*
+
+function sum() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    total += arguments[i];
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// Expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// Expected output: 10
+
+
+*/
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// Expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// Expected output: 10
+
+</script>
