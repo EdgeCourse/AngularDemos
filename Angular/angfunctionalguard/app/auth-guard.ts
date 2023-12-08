@@ -1,12 +1,13 @@
 import { inject } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
+  CanActivateFn,
   createUrlTreeFromSnapshot,
 } from '@angular/router';
 import { map } from 'rxjs';
 import { UserService } from './user.service';
 
-export const authGuard = (next: ActivatedRouteSnapshot) => {
+export const authGuard:CanActivateFn = (next: ActivatedRouteSnapshot) => {
   const service = inject(UserService);
   return service
     .isLoggedIn()
