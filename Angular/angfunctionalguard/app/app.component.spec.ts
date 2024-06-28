@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'functional-router-guards'`, () => {
+  it(`should have as title 'advanced-routing'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('functional-router-guards');
+    expect(app.title).toEqual('advanced-routing');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('functional-router-guards app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('advanced-routing app is running!');
   });
 });

@@ -1,10 +1,14 @@
-<h1>Angular Router App</h1>
-<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
-<nav>
-  <ul>
-     <li><a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
-     <li><a routerLink="/account" routerLinkActive="active" ariaCurrentWhenActive="page">Account</a></li>
-  </ul>
-</nav>
-<!-- The routed views render in the <router-outlet>-->
-<router-outlet></router-outlet>
+<h1>{{title}}</h1>
+<div>
+  <input type=button [routerLink]="['/home']" routerLinkActive="active" value="Home" >
+  <input type=button [routerLink]="['/about']" routerLinkActive="active" value="About" >
+  <input type=button [routerLink]="['/admin']" routerLinkActive="active" value="Admin" >
+  <input type=button [routerLink]="['/products']" routerLinkActive="active" value="Products" >
+</div>
+<div class=login >
+  <input class=user type=button (click)="login()" value="{{loginLabel}}" >
+  <span class=user [hidden]="user==='na'">User: {{user}}</span>
+  </div>
+<main>
+    <router-outlet></router-outlet>
+</main>
